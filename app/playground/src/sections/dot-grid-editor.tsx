@@ -117,7 +117,7 @@ export default function DotGridEditor() {
 
             <div className="flex justify-center items-center w-full h-screen bg-white">
                 <div className="flex flex-col justify-center items-center gap-4">
-                    <h1 className="text-background w-full flex justify-start text-4xl font-bold my-4">Sample usage</h1>
+                    <h1 className="text-background w-full flex justify-start text-4xl font-bold my-4 text-black">Sample usage</h1>
                     <div className="flex flex-col justify-center items-center gap-4">
                         <div className="flex justify-center items-center gap-4 w-[70vw]">
                             <div className="flex justify-center items-center bg-neutral-200 w-full h-full p-8 rounded-xl border border-dotted border-neutral-300"
