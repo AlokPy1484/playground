@@ -35,7 +35,7 @@ export default function Home() {
       {/* <PortfolioButton>
         <a className="text-sm">Hover Me</a>
       </PortfolioButton> */}
-      <Lession3 />
+
 
 
 
