@@ -87,6 +87,7 @@ export default function Lession3() {
     return (
         <div className="relative w-screen h-screen bg-white">
             <motion.div
+
                 initial={false}
                 animate={open ? "open" : "closed"}
                 transition={{
@@ -96,6 +97,7 @@ export default function Lession3() {
             >
                 <motion.div
                     variants={sidebarVariant}
+
 
 
                     className={cn("absolute inset-0 flex flex-col justify-start items-start gap-16 h-screen p-4 border-r  border-neutral-200")}>

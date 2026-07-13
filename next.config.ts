@@ -5,15 +5,25 @@ const nextConfig: NextConfig = {
 
   images: {
     remotePatterns: [
-      {protocol: "https",
+      {
+        protocol: "https",
         hostname: "icon.icepanel.io"
       },
-      {protocol: "https",
+      {
+        protocol: "https",
         hostname: "devwithalok.com"
+      },
+      {
+        protocol: "https",
+        hostname: "placehold.co"
+      },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com"
       }
     ]
-    }
   }
+}
 
 
 

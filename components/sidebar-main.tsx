@@ -10,7 +10,7 @@ import {
     SidebarSeparator,
     useSidebar
 } from "@/components/ui/sidebar"
-import { BadgeInfo, Bell, ChartBarStacked, FilePenLine, Folder, FoldHorizontal, Home, MessageCircleQuestionMark, PenIcon, Search, Settings, Shuffle, SidebarClose, SidebarIcon } from "lucide-react"
+import { BadgeInfo, Bell, ChartBarStacked, FilePenLine, Folder, FoldHorizontal, Home, LibraryBig, MessageCircleQuestionMark, PenIcon, Search, Settings, Shuffle, SidebarClose, SidebarIcon } from "lucide-react"
 import { Separator } from "radix-ui"
 import { Button } from "@/components/ui/button"
 import { motion, AnimatePresence } from "motion/react"
@@ -59,9 +59,31 @@ export function MainSidebar() {
     return (
         <Sidebar className="relative group border-black" collapsible="icon">
             <SidebarContent className=" bg-neutral-900 text-white">
-
                 <SidebarGroup>
                     <div className={cn("flex flex-col justify-center items-start gap-4 transition-translate duration-300 ease-in-out", open && "p-4")}>
+                        <Button variant={"ghost"} className={cn("flex items-center w-full  gap-4", open ? "justify-start" : "justify-center")}>
+                            <a className="p-2 bg-neutral-600 rounded-md"><LibraryBig className="size-4" /></a>
+                            <AnimatePresence>
+                                {open && (
+                                    <motion.span
+                                        initial={{ opacity: 0, width: 0, overflow: "hidden" }}
+                                        animate={{ opacity: 1, width: "auto" }}
+                                        exit={{ opacity: 0, width: 0 }}
+                                        transition={{ duration: 0.2, ease: "linear" }}
+                                        className="whitespace-nowrap text-2xl"
+                                    >
+                                        Blognest.io
+                                    </motion.span>
+                                )}
+                            </AnimatePresence>
+                        </Button>
+
+                    </div>
+                </SidebarGroup>
+
+
+                <SidebarGroup>
+                    <div className={cn("flex flex-col justify-center  gap-4 transition-translate duration-300 ease-in-out", open ? "items-start p-4" : "items-center")}>
 
                         {open && (
 
@@ -76,7 +98,7 @@ export function MainSidebar() {
                         {SidebarItems.map((item, idx) => (
                             <Tooltip key={idx}>
                                 <TooltipTrigger>
-                                    <Button variant={"ghost"} className="flex justify-start items-center w-full  gap-4">
+                                    <Button variant={"ghost"} className={cn("flex items-center w-full gap-4", open ? "justify-start" : "justify-center")}>
                                         {item.icon}
                                         <AnimatePresence>
                                             {open && (
@@ -102,7 +124,7 @@ export function MainSidebar() {
                     </div>
                 </SidebarGroup>
                 <SidebarGroup>
-                    <div className={cn("flex flex-col justify-center items-start gap-4 transition-translate duration-300 ease-in-out", open && "p-4")}>
+                    <div className={cn("flex flex-col justify-center  gap-4 transition-translate duration-300 ease-in-out", open ? "items-start p-4" : "items-center")}>
                         {open && (
 
                             <motion.a
