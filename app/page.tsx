@@ -3,6 +3,7 @@ import HoverFillButton from "@/components/HoverFillButton";
 import Component1 from "@/components/Lession1";
 import Lession2 from "@/components/Lession2";
 import Lession3 from "@/components/lession3";
+import Lession4 from "@/components/Lession4";
 import Lession5 from "@/components/Lession5";
 import MotionButton from "@/components/motion-button";
 import PLexButton from "@/components/PLexButton";
@@ -23,7 +24,7 @@ export default function Home() {
     //     backgroundRepeat: "repeat"
     //   }}>
 
-    <div className="flex justify-center items-center min-h-screen h-full w-full bg-neutral-900">
+    <div className=" min-h-screen h-full w-full bg-neutral-900">
       {/* <Component1/> */}
       {/* <PLexButton/> */}
       {/* <HoverFillButton/> */}
@@ -39,6 +40,8 @@ export default function Home() {
         <a className="text-sm">Hover Me</a>
       </PortfolioButton> */}
 
+
+      {/* <Lession4 /> */}
 
       <Lession5 />
 
