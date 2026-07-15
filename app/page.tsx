@@ -5,6 +5,8 @@ import Lession2 from "@/components/Lession2";
 import Lession3 from "@/components/lession3";
 import Lession4 from "@/components/Lession4";
 import Lession5 from "@/components/Lession5";
+import Lession5b from "@/components/Lession5b";
+import Lession6 from "@/components/Lession6";
 import MotionButton from "@/components/motion-button";
 import PLexButton from "@/components/PLexButton";
 import PortfolioButton from "@/components/portfolio-button";
@@ -43,11 +45,11 @@ export default function Home() {
 
       {/* <Lession4 /> */}
 
-      <Lession5 />
+      {/* <Lession5 /> */}
 
+      {/* <Lession5b /> */}
 
-
-
+      <Lession6 />
 
     </div>
   )
