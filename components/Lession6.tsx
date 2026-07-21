@@ -20,24 +20,25 @@ export default function Lession6() {
             y: 0
         },
             {
-                duration: 0.3,
+                duration: 0.4,
                 ease: "easeInOut",
                 delay: stagger(0.05)
 
             }
         )
-
-
-        useEffect(() => {
-            startAnimating()
-        }, [])
-
     }
+
+
+    useEffect(() => {
+        startAnimating()
+    }, [])
+
+
 
     return (
         <div
             ref={scope}
-            className="flex justify-center items-center w-screen h-screen ">
+            className="mx-auto max-w-4xl text-4xl text-white">
             {/* <motion.span
 
                 style={{
@@ -53,8 +54,10 @@ export default function Lession6() {
                         filter: "blur(10px)",
                         y: 10
                     }}
-                    key={word + index}>
-
+                    key={word + index}
+                    className="inline-block px-2"
+                >
+                    {word + " "}
                 </motion.span>))}
         </div>
     )

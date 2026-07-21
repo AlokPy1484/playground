@@ -19,14 +19,14 @@ export default function Home() {
 
   return (
 
-    // <div className="flex justify-center items-center h-screen w-full bg-neutral-900"
+    // <div className="flex justify-center items-start h-screen w-full bg-neutral-900"
     //   style={{
     //     backgroundImage: `radial-gradient(circle at 0.5px  0.5px, rgba(6,182,212,0.2) 0.5px, transparent 0)`,
     //     backgroundSize: "8px 8px",
     //     backgroundRepeat: "repeat"
     //   }}>
 
-    <div className=" min-h-screen h-full w-full bg-neutral-900">
+    <div className=" min-h-screen w-screen flex justify-center items-center bg-neutral-900">
       {/* <Component1/> */}
       {/* <PLexButton/> */}
       {/* <HoverFillButton/> */}
@@ -44,14 +44,16 @@ export default function Home() {
 
 
       {/* <Lession4 /> */}
+      <StackButton logoLink="https://thesvg.org/icons/nextdotjs/default.svg" name="Next.js lorem ipsum dolo" />
 
       {/* <Lession5 /> */}
 
       {/* <Lession5b /> */}
 
-      <Lession6 />
+      {/* <Lession6 /> */}
 
     </div>
+    // </div >
   )
 
 }

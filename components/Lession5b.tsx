@@ -44,12 +44,12 @@ export default function Lession5b() {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(2)
 
     return (
-        <div className="py-40">
-            <nav className="max-w-xl mx-auto bg-gray-100 rounded-full px-2 py-1 flex">
+        <div className="flex items-start">
+            <nav className=" max-w-5xl w-screen mx-auto bg-gray-100 rounded-full px-2 py-1 flex">
                 {navItems.map((item, idx) => (
                     <Link
                         onMouseEnter={() => setHoveredIndex(idx)}
-                        onMouseLeave={() => setHoveredIndex(2)}
+                        onMouseLeave={() => setHoveredIndex(null)}
                         className="w-full relative group text-center py-3 text-xs text-neutral-500"
                         href={item.link}
                         key={item.title}
