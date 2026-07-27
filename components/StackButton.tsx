@@ -29,7 +29,7 @@ export default function StackButton(props: buttonType) {
             }}
 
 
-            className="group flex justify-center items-center h-[40px]  overflow-hidden p-1 bg-neutral-900 border border-dashed border-neutral-700 border-[1px] rounded-lg gap-2 px-2 cursor-pointer">
+            className="group flex items-center h-[40px]  overflow-hidden p-1 bg-neutral-900 border border-dashed border-neutral-700 border-[1px] rounded-lg gap-2 px-2 cursor-pointer">
             <Image src={props.logoLink} alt="logo" width={30} height={30} className=" rounded-full" />
             <motion.span
                 className="font-light block opacity-0 group-hover:opacity-100 transition-all duration-300 text-[12px] whitespace-nowrap text-white">
