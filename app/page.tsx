@@ -14,6 +14,7 @@ import RippleButton from "@/components/RippleButton";
 import SplitRevealButton from "@/components/SplitReveal";
 import StackButton from "@/components/StackButton";
 import Image from "next/image";
+import ReducerDemo from "./reducerDemo/page";
 
 export default function Home() {
 
@@ -44,7 +45,7 @@ export default function Home() {
 
 
       {/* <Lession4 /> */}
-      <StackButton logoLink="https://thesvg.org/icons/nextdotjs/default.svg" name="Next.js lorem ipsum dolo" />
+      {/* <StackButton logoLink="https://thesvg.org/icons/nextdotjs/default.svg" name="Next.js lorem ipsum dolo" /> */}
 
       {/* <Lession5 /> */}
 
@@ -52,8 +53,10 @@ export default function Home() {
 
       {/* <Lession6 /> */}
 
+      <ReducerDemo />
     </div>
     // </div >
+
   )
 
 }
