@@ -7,10 +7,7 @@ import { useRef } from "react";
 
 
 
-
-
-
-export default function ScrollParallaxCard({ i, color, progress, range, targetScale }) {
+export default function ScrollParallaxCard({ i, color, progress, range, targetScale, src }) {
     const ref = useRef<HTMLDivElement>(null)
 
     const { scrollYProgress } = useScroll({
@@ -18,25 +15,35 @@ export default function ScrollParallaxCard({ i, color, progress, range, targetSc
         offset: ["start end", "end start"]
     })
 
+
+    // converting 0 - 1 of scrollY to 2 - 1 numeric value, which can later be used with scale
     const scale = useTransform(scrollYProgress, [0, 1], [2, 1])
 
     const mainScale = useTransform(progress, range, [1, targetScale])
 
     return (
-        <div ref={ref} className="sticky top-0 h-screen">
-            <motion.div className="relative flex justify-center items-center w-[1000px] h-[500px] rounded-4xl"
+        //Card Container
+        <div ref={ref} className="sticky top-0 h-screen z-[9999]">
+
+            {/* Card Div */}
+            <motion.div className="relative flex justify-center items-center overflow-hidden rounded-4xl p-2 backdrop-blur-xs border-1 border-neutral-700"
                 style={{
-                    backgroundColor: color,
-                    top: `calc(10vh + ${i * 25}px)`,
+                    top: `calc(10vh + ${i * 30}px)`,
                     scale: mainScale
+
                 }}>
-                <div className="object-cover overflow-hidden rounded-3xl">
+
+                {/* Image Wrapper */}
+                <div className="relative w-[980px] h-[480px] overflow-hidden rounded-3xl">
+
+                    {/* Prallax Image Container */}
                     <motion.div
                         style={{ scale }}
-                    >
-                        <Image unoptimized src={"https://placehold.co/980x480"} alt="image" width={980} height={480} />
+                        className="relative object-cover overflow-hidden w-full h-full">
+                        <Image unoptimized src={src} alt="image" fill className="object-cover" />
                     </motion.div>
                 </div>
+
             </motion.div>
         </div>
     )
