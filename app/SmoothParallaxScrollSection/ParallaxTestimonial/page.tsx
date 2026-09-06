@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react"
 import ReactLenis, { useLenis } from "lenis/react"
 import { motion, useScroll, useTransform } from 'motion/react'
 import { cn } from "@/lib/utils"
+import { TweetCard } from "@/components/ui/tweet-card"
 
 
 
@@ -68,7 +69,8 @@ function ColumnCard(props) {
                     style={{
                         y: props.y
                     }}>
-                    <Image unoptimized src={image.link} alt="image" width={600} height={400} className={cn(` object-cover rounded-md md:h-[600px] `)} />
+                    <TweetCard id="2096479863561744835" />
+                    {/* <Image unoptimized src={image.link} alt="image" width={600} height={400} className={cn(` object-cover rounded-md md:h-[600px] `)} /> */}
                 </motion.div>
             ))}
         </div>

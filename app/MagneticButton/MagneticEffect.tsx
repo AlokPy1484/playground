@@ -5,10 +5,7 @@ import { motion, spring } from "motion/react"
 
 
 
-
-
 export default function MagneticButton({ children }: { children: React.ReactNode }) {
-
 
     const ref = useRef(null)
 
