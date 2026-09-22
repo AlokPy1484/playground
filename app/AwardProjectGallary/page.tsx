@@ -1,5 +1,4 @@
 "use client"
-
 import Image from "next/image"
 import { projects } from "../ScrollParallaxCard/data"
 import { useEffect, useRef, useState } from "react"
@@ -9,7 +8,6 @@ import gsap from "gsap"
 
 
 export default function page() {
-
 
     const [modal, setModal] = useState({ active: false, index: 0 })
 
@@ -44,15 +42,22 @@ export default function page() {
 
     return (
         <motion.div
-
-            className="page-container flex justify-center items-center w-screen h-screen font-mono bg-neutral-100">
+            className="page-container relative flex justify-center items-center w-screen h-screen font-mono bg-neutral-100">
             <div className="projects-container flex flex-col justify-center items-center max-w-3xl w-full">
 
                 {Modalprojects.map((project, idx) => (
                     <ProjectCard index={idx} setModal={setModal} key={idx} name={project.title} role="Design & Development" />
                 ))}
+
             </div>
-            {modal.active && <Model modal={modal} scaleAnimation={scaleAnimation} index={modal.index} array={Modalprojects} />}
+
+            <Modal modal={modal} scaleAnimation={scaleAnimation} index={modal.index} array={Modalprojects} />
+
+
+            {/* <div className="fixed top-40 right-40">
+                {modal.active ? <a>Modal: True</a> : <a>Modal: False</a>}
+                <p>Index: {modal.index}</p>
+            </div> */}
 
         </motion.div>
     )
@@ -61,39 +66,33 @@ export default function page() {
 
 
 
-
+//it sets the modal true on hover and passes the index of project to it
 const ProjectCard = (props: { name: string, role: string, index: number, setModal: any }) => (
     <div className="group project-container flex justify-center items-center px-12 py-8 border-t border-neutral-300 w-full"
         onMouseEnter={() => props.setModal({ active: true, index: props.index })}
-        onMouseLeave={() => props.setModal({ active: false, index: props.index })}>
+        onMouseLeave={() => props.setModal({ active: false, index: 0 })}>
         <div className="project-wrapper flex justify-between items-center w-full">
             <a className="text-4xl text-neutral-900 opacity-100 group-hover:opacity-40 group-hover:translate-x-[-10px] transition-all duration-300 ease-in-out">{props.name}</a>
             <a className="text-sm text-neutral-400 opacity-100 group-hover:opacity-40 group-hover:translate-x-[10px] transition-all duration-300 ease-in-out">{props.role}</a>
         </div>
-
-
-
     </div>
 )
 
 
-export function Model(props) {
-
+export function Modal(props) {
 
     const container = useRef(null)
     const cursor = useRef(null)
-    const cursorLable = useRef(null)
+
 
 
     useEffect(() => {
         const moveContainerX = gsap.quickTo(container.current, "left", { duration: 0.8, ease: "power3" })
         const moveContainerY = gsap.quickTo(container.current, "top", { duration: 0.8, ease: "power3" })
 
-        const moveCursorX = gsap.quickTo(cursor.current, "left", { duration: 0.8, ease: "power3" })
-        const moveCursorY = gsap.quickTo(cursor.current, "top", { duration: 0.8, ease: "power3" })
+        const moveCursorX = gsap.quickTo(cursor.current, "left", { duration: 0.5, ease: "power3" })
+        const moveCursorY = gsap.quickTo(cursor.current, "top", { duration: 0.5, ease: "power3" })
 
-        const moveCursorLableX = gsap.quickTo(cursorLable.current, "left", { duration: 0.8, ease: "power3" })
-        const moveCursorLableY = gsap.quickTo(cursorLable.current, "top", { duration: 0.8, ease: "power3" })
 
         window.addEventListener("mousemove", (e) => {
             const { clientX, clientY } = e
@@ -103,23 +102,20 @@ export function Model(props) {
             moveCursorX(clientX)
             moveCursorY(clientY)
 
-
-
         })
 
     }, [])
 
 
-
     return (
 
         <div className="flex justify-center items-center">
-            < motion.div
+            <motion.div
                 ref={container}
                 variants={props.scaleAnimation}
                 initial="initial"
                 animate={props.modal.active ? "open" : "closed"}
-                className="model-container absolute flex justify-center items-center w-[218px] h-[143px] overflow-hidden pointer-events-none" >
+                className="model-container cursor-none absolute flex justify-center items-center w-[218px] h-[143px] overflow-hidden pointer-events-none" >
                 <div className="model-slider absolute  flex justify-center items-center w-full h-full transition-all duration-300"
                     style={{
                         top: props.index * -100 + "%"
@@ -134,9 +130,14 @@ export function Model(props) {
                 </div>
             </motion.div >
 
-            <span ref={cursor} className="cursor absolute rounded-full bg-yellow-200 w-16 h-16 pointer-events-none flex  items-center justify-center">
-                <span ref={cursorLable} className="cursor-lable absolute rounded-full bg-none  text-xs pointer-events-none">View</span>
-            </span>
+            {/* <motion.span ref={cursor}
+                variants={props.scaleAnimation}
+                initial="initial"
+                animate={props.modal.active ? "open" : "closed"}
+                style={{ transform: "translate(-50%, -50%)" }}
+                className="cursor absolute rounded-full bg-yellow-200/40 backdrop-blur-lg w-16 h-16 pointer-events-none cursor-none flex  items-center justify-center">
+                <span className="cursor-lable absolute rounded-full bg-none  text-xs cursor-none pointer-events-none">View</span>
+            </motion.span> */}
 
         </div>
 
@@ -144,3 +145,5 @@ export function Model(props) {
     )
 
 }
+
+

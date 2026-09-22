@@ -2,6 +2,7 @@ import { Camera, Mic, Settings, Wifi } from "lucide-react";
 import MagneticButton from "../MagneticButton/MagneticEffect";
 import ScreenStudioButton from "./ScreenStudioButton";
 import MagneticLayoutButton from "./MagneticLayoutButton";
+import ScreenStudioButtonNew from "./ScreenStudioButtonFixed";
 
 
 
@@ -31,19 +32,21 @@ export default function page() {
 
 
             <div className="flex justify-center items-center gap-4 text-neutral-200">
-                {/* <ScreenStudioButton>
-                    <a className="text-white ">Hello World</a>
-                </ScreenStudioButton>
-                <ScreenStudioButton>
-                    <a className="text-white ">Hello World</a>
-                </ScreenStudioButton>
-                <ScreenStudioButton>
-                    <a className="text-white ">Hello World</a>
-                </ScreenStudioButton> */}
+                {Buttons.map((btn, idx) => (
+
+
+                    <ScreenStudioButtonNew key={idx}>
+                        <a className="flex items-center gap-2">
+                            {btn.icon}{btn.lable}
+                        </a>
+                    </ScreenStudioButtonNew>
+
+                ))}
 
 
 
-                <MagneticLayoutButton array={Buttons} />
+
+                {/* <MagneticLayoutButton array={Buttons} /> */}
 
             </div>
         </div>
