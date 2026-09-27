@@ -12,6 +12,7 @@
     "@radix-ui/react-hover-card": "^1.1.16",
     "@react-three/drei": "^10.7.8",
     "@react-three/fiber": "^9.8.0",
+    "@thesvg/react": "^3.3.8",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cn": "^0.3.2",
