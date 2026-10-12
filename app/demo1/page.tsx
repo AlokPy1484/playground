@@ -1,9 +1,9 @@
-import StackButton from "@/components/StackButton"
+x import StackButton from "@/components/StackButton"
 
 
 
 
-export default function page(){
+export default function page() {
 
 
   const StackList = [
@@ -34,20 +34,20 @@ export default function page(){
   ]
 
 
-    return(
-        <div className="flex justify-center items-center w-screen h-screen bg-neutral-800" 
-        style={{
-      backgroundImage: `radial-gradient(circle at 0.5px  0.5px, rgba(6,182,212,0.2) 0.5px, transparent 0)`,
-      backgroundSize: "8px 8px",
-      backgroundRepeat: "repeat"
-    }}>
+  return (
+    <div className="flex justify-center items-center w-screen h-screen bg-neutral-800"
+      style={{
+        backgroundImage: `radial-gradient(circle at 0.5px  0.5px, rgba(6,182,212,0.2) 0.5px, transparent 0)`,
+        backgroundSize: "8px 8px",
+        backgroundRepeat: "repeat"
+      }}>
 
-    <div className="flex justify-center items-center gap-1 w-[40vw] h-[30vh] bg-black flex-wrap">
-      {StackList.map((stack)=>(
-        <StackButton logoLink={stack.logoLink} name={stack.name}/>
-      ))}
+      <div className="flex justify-center items-center gap-1 w-[40vw] h-[30vh] bg-black flex-wrap">
+        {StackList.map((stack) => (
+          <StackButton logoLink={stack.logoLink} name={stack.name} />
+        ))}
+      </div>
+
     </div>
-        
-    </div>
-    )
+  )
 }

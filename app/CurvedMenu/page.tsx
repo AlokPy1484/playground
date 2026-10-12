@@ -2,8 +2,6 @@
 import { useState } from "react"
 import { AnimatePresence, motion } from "motion/react"
 
-
-
 export default function page() {
 
     const [isOpen, setIsOpen] = useState<Boolean>(false)
@@ -53,7 +51,6 @@ export function Header({ toggleOpen, isOpen }) {
         </div>
     )
 }
-
 
 
 export function NavMenu() {
